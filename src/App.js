@@ -37,46 +37,47 @@ import StudentDashboard from './pages/student/studentDashboard';
 import ChatPage from './pages/student/chatpage';
 import StudentTimetable from './pages/student/studenttimetable';
 import Chat from './pages/Faculty/facultyChat';
+import PrivateRoute from './PrivateRoute';
 
 
 
 const router = createBrowserRouter([
-  {path:'/login', element:<Login/>},
+  {path:'/', element:<Login/>},
   {path:'/Register', element:<Register/>},
-  {path:'/addstudent', element:<StudentList/>},
-  {path:'/Dashboard', element:<Dashboard/>},
-  {path:'/Navbar', element:<Navbar/>},
-   {path:'/sidebar', element:<Sidebar/>},
-  {path:'/Stafflist', element:<StaffList/>},
-  {path:'/TeacherDashboard', element:<TeacherDashboard/>},
-  {path:'/adminhomepage', element:<admin/>},
-  {path:'/aboutpage', element:<About />},
-  {path:'/aboutpage/contactpage', element:<ContactForm />},
-  {path:'/assigncourse', element:<TeacherManagement />},
-  {path:'/maindashboard', element:<HODDashboard />},
-  {path:'/dashboard/maindashboard', element:<HODDashboard/>},
-  {path:'/timeTable', element:<Timetable/>},
-  {path:'/addworkingstaff', element:<StaffList/>},
- {path:'/', element:<Home/>},
- {path:'/course', element:<Course />},
- {path:'attendencetracker', element:<HodAttendancePage/>},
- {path:'/createdepartment', element:<DepartmentCreationPage />},
- {path:'/reports', element:<Studentreport />},
- {path:'/meeting', element:<MeetingScheduler />},
- {path:'/home', element:<Home />},
- {path:'/addfaculty', element:<HodTeacherManagement/>},
- {path:'/addattenence', element:<TeacherAttendancePage />},
- {path:'/chart', element:<HodPieChartPage/>},
- {path:'/studentgroup', element:<TeacherGroupManagement/>},
- {path:'/assignment', element:<AssignmentPage />},
- {path:'/grouping', element:<TeamManagementPage />},
- {path:'/hodassign', element:< HodPage />},
- {path:'/teacherchat', element:<TaskManagementPage />},
- {path:'/teacherstimetable', element:<Techertable/>},
- {path:'/facultychat', element:< Chat/>},
- {path:'/studentdashboard', element:<StudentDashboard/>},
- {path:'/studentbot', element:< ChatPage/>},
- {path:'/studenttimetable', element:< StudentTimetable/>},
+  {path:'/addstudent', element:<PrivateRoute><StudentList/></PrivateRoute>},
+  {path:'/Dashboard', element:<PrivateRoute><Dashboard/></PrivateRoute>},
+  // {path:'/Navbar', element:<Navbar/>},
+  //  {path:'/sidebar', element:<Sidebar/>},
+  {path:'/Stafflist', element:<PrivateRoute> <StaffList/> </PrivateRoute>},
+  {path:'/TeacherDashboard', element:<PrivateRoute> <TeacherDashboard/> </PrivateRoute>},
+  // {path:'/adminhomepage', element:<admin/>},
+  // {path:'/aboutpage', element:<About />},
+  // {path:'/aboutpage/contactpage', element:<ContactForm />},
+  {path:'/assigncourse', element:<PrivateRoute><TeacherManagement /></PrivateRoute>},
+  {path:'/maindashboard', element:<PrivateRoute> <HODDashboard /> </PrivateRoute>},
+  // {path:'/dashboard/maindashboard', element:<HODDashboard/>},
+  // {path:'/timeTable', element:<Timetable/>},
+  {path:'/addworkingstaff', element:<PrivateRoute><StaffList/></PrivateRoute>},
+//  {path:'/home', element:<Home/>},
+ {path:'/course', element:<PrivateRoute><Course /></PrivateRoute>},
+ {path:'attendencetracker', element:<PrivateRoute><HodAttendancePage/></PrivateRoute>},
+ {path:'/createdepartment', element:<PrivateRoute><DepartmentCreationPage /></PrivateRoute>},
+//  {path:'/reports', element:<Studentreport />},
+//  {path:'/meeting', element:<MeetingScheduler />},
+//  {path:'/home', element:<Home />},
+//  {path:'/addfaculty', element:<HodTeacherManagement/>},
+//  {path:'/addattenence', element:<TeacherAttendancePage />},
+//  {path:'/chart', element:<HodPieChartPage/>},
+//  {path:'/studentgroup', element:<TeacherGroupManagement/>},
+//  {path:'/assignment', element:<AssignmentPage />},
+//  {path:'/grouping', element:<TeamManagementPage />},
+//  {path:'/hodassign', element:< HodPage />},
+//  {path:'/teacherchat', element:<TaskManagementPage />},
+//  {path:'/teacherstimetable', element:<Techertable/>},
+//  {path:'/facultychat', element:< Chat/>},
+//  {path:'/studentdashboard', element:<StudentDashboard/>},
+//  {path:'/studentbot', element:< ChatPage/>},
+//  {path:'/studenttimetable', element:< StudentTimetable/>},
 
  
 ])
@@ -84,10 +85,10 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <>
+    <div className="h-screen">
     <RouterProvider router = {router}  />
                
-    </>
+    </div>
   );
 }
 
