@@ -34,7 +34,7 @@ const HomePage = () => {
     <Navbar />
 
 
-    {/* <div className="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div className="bg-gray-100 min-h-screen flex items-center justify-center">
       <div className="max-w-3xl p-6 bg-white rounded shadow-md">
         <h1 className="text-4xl font-bold mb-6">Software Engineering Home Page</h1>
 
@@ -70,7 +70,7 @@ const HomePage = () => {
           </button>
         </section>
       </div>
-    </div> */}
+    </div>
     </>
   );
 };

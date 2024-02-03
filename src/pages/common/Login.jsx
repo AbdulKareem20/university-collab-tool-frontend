@@ -4,6 +4,8 @@ import { loginUser } from '../../components/services/authService';
 import { useDispatch } from 'react-redux';
 import {Link} from 'react-router-dom'
 import Navbar from './navbar';
+import Sidebar from './sidebar';
+import TeacherDashboard from '../Faculty/facultyDashboard';
 const Login = () => {
   const[email, setEmail] = useState('');
   const[password, setPassword] = useState('');
@@ -18,6 +20,12 @@ const Login = () => {
   return (
     <>
     <Navbar />
+    <div class="container-fluid" id="main">
+                 <div class="row row-offcanvas row-offcanvas-left">
+                   <Sidebar/>
+                   <TeacherDashboard></TeacherDashboard>
+             </div>
+            </div>  
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           {/* <img

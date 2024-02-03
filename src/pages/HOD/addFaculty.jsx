@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Navbar from '../common/navbar';
 
 const TeacherManagement = () => {
   const [teachers, setTeachers] = useState([]);
@@ -35,7 +36,9 @@ const TeacherManagement = () => {
   };
 
   return (
-    <div className="container mx-auto mt-8">
+    <>
+    <Navbar/>
+    <div className="container mx-auto mt-8 m-4">
       <h2 className="text-3xl font-bold mb-4">Teacher Management</h2>
 
       <div className="grid grid-cols-3 gap-4">
@@ -84,32 +87,44 @@ const TeacherManagement = () => {
           )}
         </div>
 
-     
-        <div className="col-span-1">
-          <h3 className="text-xl font-bold mb-4">Teachers List</h3>
-          <ul>
-            {teachers.map((teacher) => (
-              <li key={teacher.id} className="mb-2">
-                <span className="mr-2">{teacher.name}</span>
-                <span className="text-gray-500">{teacher.subject}</span>
-                <button
-                  onClick={() => editTeacher(teacher)}
-                  className="ml-2 text-blue-500 hover:text-blue-700"
-                >
-                  Edit
-                </button>
-                <button
-                  onClick={() => deleteTeacher(teacher)}
-                  className="ml-2 text-red-500 hover:text-red-700"
-                >
-                  Delete
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
+<div className="col-span-3">
+  <h3 className="text-xl font-bold mb-4">Teachers List</h3>
+  <table className="min-w-full">
+    <thead>
+      <tr>
+        <th className="py-2 px-4 bg-gray-200">Name</th>
+        <th className="py-2 px-4 bg-gray-200">Subject</th>
+        <th className="py-2 px-4 bg-gray-200">Actions</th>
+      </tr>
+    </thead>
+    <tbody className='text-center'>
+      {teachers.map((teacher) => (
+        <tr key={teacher.id} className="mb-2">
+          <td className="border py-2 px-4">{teacher.name}</td>
+          <td className="border py-2 px-4">{teacher.subject}</td>
+          <td className="border py-2 px-4">
+            <button
+              onClick={() => editTeacher(teacher)}
+              className="text-blue-500 hover:text-blue-700"
+            >
+              Edit
+            </button>
+            <button
+              onClick={() => deleteTeacher(teacher)}
+              className="ml-2 text-red-500 hover:text-red-700"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
       </div>
     </div>
+    </>
   );
 };
 

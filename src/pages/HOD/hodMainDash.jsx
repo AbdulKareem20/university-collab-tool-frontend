@@ -13,16 +13,23 @@ const HODDashboard = () => {
       
       <div className="grid grid-cols-2 gap-4">
         <div className="bg-gray-200 p-4 rounded">
-     <Link to='/addFaculty'>     <h2 className="text-2xl font-bold mb-2">Add Faculty</h2></Link>
+     <Link to='/assigncourse'>     <h2 className="text-2xl font-bold mb-2">Assign Course</h2></Link>
         
-        </div>
+        </div>  
 
         <div className="bg-gray-200 p-4 rounded">
-       <Link>   <h2 className="text-2xl font-bold mb-2">Add Students</h2></Link>
+     <Link to='/addfaculty'>     <h2 className="text-2xl font-bold mb-2">Add Faculty Members</h2></Link>
+        
+        </div> 
+        
+
+
+        <div className="bg-gray-200 p-4 rounded">
+       <Link to='/addstudent'>   <h2 className="text-2xl font-bold mb-2">Add Students</h2></Link>
          
         </div>
         <div className="bg-gray-200 p-4 rounded">
-       <Link>   <h2 className="text-2xl font-bold mb-2">Add Working Staff</h2> </Link>
+       <Link to='/addworkingstaff'>   <h2 className="text-2xl font-bold mb-2">Add Working Staff</h2> </Link>
           
         </div>
 
